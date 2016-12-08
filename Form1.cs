@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,14 @@ namespace TestClassi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Monster strongbonna = new Monster("Strongbonna", 10, 50);
-            Monster charmender = new Monster("Charmender", 56, 10);
+            Monster strongbonna = new Monster("Strongbonna", 100, 20);
+            Monster charmender = new Monster("Charmender", 60, 20, 10);
+
             strongbonna.attack(charmender);
+            charmender.attack(strongbonna);
+            strongbonna.heal();
+            strongbonna.curHp = 2442;
+            charmender.heal(strongbonna);
             strongbonna.attack(charmender);
             strongbonna.attack(charmender);
         }
